@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./img/calculator_icon-icons.com_72046.ico" type="img">
+  <link rel="stylesheet" href="style.css">
+  <title>Calculadora de Área</title>
+</head>
+
+<body>
+  <div class="main_container">
+
+    <nav>
+      <h1>Escolha qual figura você deseja saber a área</h1>
+      <div class="navegacao">
+        <button class="nav_button" onclick="shoWcircleCalculator()"><img src="./img/circulo.png"
+            alt="circulo preto"></button>
+        <button class="nav_button" onclick="shoWlosangCalculator()"><img src="./img/losango.png"
+            alt="closango preto"></button>
+        <button class="nav_button" onclick="shoWtriangCalculator()"><img src="./img/triangulo.png"
+            alt="triangulo preto"></button>
+        <button class="nav_button" onclick="shoWtrapezCalculator()"><img src="./img/trapezio.png"
+            alt="trapezio preto"></button>
+        <button class="nav_button" onclick="shoWsquareCalculator()"><img src="./img/quadrado.png"
+            alt="quadrado preto"></button>
+        <button class="nav_button" onclick="shoWretangCalculator()"><img src="./img/retangulo.png"
+            alt="retangulo preto"></button>
+      </div>
+    </nav>
+    <div class="dados">
+      <div id="circle" class="calculator"> <!--FEITO-->
+        <h2>Calculando Área do circulo...</h2>
+        <label for="radius">Comprimento do Raio:</label>
+        <input type="number" id="radius">
+        <button onclick="calculateCircleArea()">Calcular</button>
+        <p id="circleResult"></p>
+      </div>
+
+      <div id="losang" class="calculator"> <!--FEITO-->
+        <h2>Calculando Área do losango...</h2>
+        <label for="bigDiagonal">Comprimento da diagonal maior (D):</label>
+        <input type="number" id="bigDiagonal">
+        <label for="smallDiagonal">Comprimento da diagonal menor (d):</label>
+        <input type="number" id="smallDiagonal">
+        <button onclick="calculateLosangArea()">Calcular</button>
+        <p id="losangResult"></p>
+      </div>
+
+      <div id="triang" class="calculator"><!--FEITO-->
+        <h2>Calculando Área do triangulo...</h2>
+        <label for="baseTri">Comprimento da base:</label>
+        <input type="number" id="baseTri">
+        <label for="heigthTri">Comprimento da altura:</label>
+        <input type="number" id="heigthTri">
+        <button onclick="calculateTriangArea()">Calcular</button>
+        <p id="triangResult"></p>
+      </div>
+
+      <div id="trapez" class="calculator"> <!--FEITO-->
+        <h2>Calculando Área do trapézio...</h2>
+        <label for="bigBase">Comprimento da base maior (B):</label>
+        <input type="number" id="bigBase">
+        <label for="smallBase">Comprimento da base menor(b):</label>
+        <input type="number" id="smallBase">
+        <label for="heigth">Comprimento da altura (h):</label>
+        <input type="number" id="heigth">
+        <button onclick="calculateTrapezArea()">Calcular</button>
+        <p id="trapezResult"></p>
+      </div>
+
+      <div id="square" class="calculator"> <!--FEITO-->
+        <h2>Calculando Área do quadrado...</h2>
+        <label for="sideLength">Comprimento do lado:</label>
+        <input type="number" id="sideLength">
+        <button onclick="calculateSquareArea()">Calcular</button>
+        <p id="squareResult"></p>
+      </div>
+
+      <div id="retang" class="calculator"> <!--FEITO-->
+        <h2>Calculando Área do retângulo...</h2>
+        <label for="baseRet">Comprimento da base:</label>
+        <input type="number" id="baseRet">
+        <label for="heigthRet">Comprimento da altura:</label>
+        <input type="number" id="heigthRet">
+        <button onclick="calculateRetangArea()">Calcular</button>
+        <p id="retangResult"></p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const circleCalculator = document.getElementById('circle');
+    const losangCalculator = document.getElementById('losang');
+    const triangCalculator = document.getElementById('triang');
+    const trapezCalculator = document.getElementById('trapez');
+    const squareCalculator = document.getElementById('square');
+    const retangCalculator = document.getElementById('retang');
+
+    function shoWsquareCalculator() {
+      squareCalculator.style.display = 'block';
+      circleCalculator.style.display = 'none';
+      losangCalculator.style.display = 'none';
+      trapezCalculator.style.display = 'none';
+      retangCalculator.style.display = 'none';
+      triangCalculator.style.display = 'none';
+    }
+    function shoWcircleCalculator() {
+      squareCalculator.style.display = 'none';
+      circleCalculator.style.display = 'block';
+      losangCalculator.style.display = 'none';
+      trapezCalculator.style.display = 'none';
+      retangCalculator.style.display = 'none';
+      triangCalculator.style.display = 'none';
+    }
+    function shoWlosangCalculator() {
+      squareCalculator.style.display = 'none';
+      circleCalculator.style.display = 'none';
+      losangCalculator.style.display = 'block';
+      trapezCalculator.style.display = 'none';
+      retangCalculator.style.display = 'none';
+      triangCalculator.style.display = 'none';
+    }
+    function shoWtrapezCalculator() {
+      squareCalculator.style.display = 'none';
+      circleCalculator.style.display = 'none';
+      losangCalculator.style.display = 'none';
+      trapezCalculator.style.display = 'block';
+      retangCalculator.style.display = 'none';
+      triangCalculator.style.display = 'none';
+    }
+    function shoWretangCalculator() {
+      squareCalculator.style.display = 'none';
+      circleCalculator.style.display = 'none';
+      losangCalculator.style.display = 'none';
+      trapezCalculator.style.display = 'none';
+      retangCalculator.style.display = 'block';
+      triangCalculator.style.display = 'none';
+    }
+    function shoWtriangCalculator() {
+      squareCalculator.style.display = 'none';
+      circleCalculator.style.display = 'none';
+      losangCalculator.style.display = 'none';
+      trapezCalculator.style.display = 'none';
+      retangCalculator.style.display = 'none';
+      triangCalculator.style.display = 'block';
+    }
+
+    function calculateSquareArea() {
+      const sideLength = parseFloat(document.getElementById('sideLength').value);
+      const area = sideLength * sideLength;
+      document.getElementById('squareResult').textContent = `Área: ${area}`;
+    }
+
+    function calculateCircleArea() {
+      const radius = parseFloat(document.getElementById('radius').value);
+      const area = Math.PI * radius * radius;
+      document.getElementById('circleResult').textContent = `Área: ${area.toFixed(2)}`;
+    }
+
+    function calculateLosangArea() {
+      const bigDiagonal = parseFloat(document.getElementById('bigDiagonal').value);
+      const smallDiagonal = parseFloat(document.getElementById('smallDiagonal').value);
+      const area = (bigDiagonal * smallDiagonal) / 2;
+      document.getElementById('losangResult').textContent = `Área: ${area}`;
+    }
+
+    function calculateTrapezArea() {
+      const bigBase = parseFloat(document.getElementById('bigBase').value);
+      const smallBase = parseFloat(document.getElementById('smallBase').value);
+      const heigth = parseFloat(document.getElementById('heigth').value);
+      const area = ((bigBase + smallBase) * heigth) / 2;
+      document.getElementById('trapezResult').textContent = `Área: ${area}`;
+    }
+
+    function calculateTriangArea() {
+      const baseTri = parseFloat(document.getElementById('baseTri').value);
+      const heigthTri = parseFloat(document.getElementById('heigthTri').value);
+      const area = (baseTri * heigthTri) / 2;
+      document.getElementById('triangResult').textContent = `Área: ${area}`;
+    }
+
+    function calculateRetangArea() {
+      const baseRet = parseFloat(document.getElementById('baseRet').value);
+      const heigthRet = parseFloat(document.getElementById('heigthRet').value);
+      const area = baseRet * heigthRet;
+      document.getElementById('retangResult').textContent = `Área: ${area}`;
+    }
+  </script>
+
+</body>
+
+</html>

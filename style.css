@@ -1,0 +1,96 @@
+*{
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+body{
+    background-color: rgb(172, 139, 202);
+}
+
+h1{
+    font-size: 32px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.calculator {
+    display: none;
+    margin: 0 auto;
+}
+
+nav{
+    width: 80%;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+.navegacao{
+    display: flex;
+    align-items: flex-end;
+    margin-top: 30px;
+}
+
+.nav_button{
+    border: none;
+    margin: 20px;
+    width: 30%;
+    background-color: rgb(172, 139, 202);
+}
+
+img:hover{
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+img{
+    width: 100%;
+}
+
+#square.calculator,
+#triang.calculator,
+#losang.calculator,
+#circle.calculator,
+#trapez.calculator,
+#retang.calculator{
+    background-color: rgba(61, 30, 90, 0.699);
+    margin: 0 auto;
+    padding: 20px;
+    width: 75%;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 4px rgb(61, 30, 90);
+    justify-content: center;
+}
+
+label{
+    margin: 20px;
+}
+
+input{
+    display: block;
+    width: 50%;
+    margin: 10px 25px;
+    border-radius: 5px;
+    border: none;
+    height: 25px;
+    box-shadow: 0px 0px 5px 2px rgb(61, 30, 90);
+}
+
+.dados button{
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    margin: 10px auto;
+    color: rgb(240, 240, 240);
+    background-color: rgba(42, 16, 66, 0.699);
+}
+
+.dados button:hover{
+    background-color: rgb(7, 190, 105);
+}
+
+p{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px auto;
+}
